@@ -13,10 +13,10 @@
         <h2>Roast</h2>
 
     {% endif %}
-    <p>{{post}} </p>
+    <p>{{post.text}} </p>
     <a href="/like/{{post.id}}/">UPVOTE</a>
     <a href="/dislike/{{post.id}}/">DOWNVOTE</a>
-    <p>{{post.likes}}</p>
+    <p>Post Score: {{post}}</p>
     <p>{{post.created_at}} </p>
 </div>
 <hr>
