@@ -42,6 +42,6 @@ def likes_view(request,post_id):
 
 def dislikes_view(request,post_id):
     post = Posts.objects.filter(id=post_id).first()
-    post.likes -= 1
+    post.dislikes += 1
     post.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
