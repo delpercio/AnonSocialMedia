@@ -1,2 +1,23 @@
-<h1>sorted by score</h1>
-<a href="/"> GO HOME</a>
+<h1>xxGHOST_POSTxx</h1>
+<a href="/">home</a>
+<a href="/submit"> submit</a>
+<a href="/sorted"> top score</a>
+<a href="/roasts"> roasts</a>
+<a href="/boasts"> boasts</a>
+{% for post in posts%}
+<hr>
+<div>
+    {% if post.post_type %}
+        <h2>Boast</h2>
+    {% else%}
+        <h2>Roast</h2>
+
+    {% endif %}
+    <p>{{post}} </p>
+    <a href="/like/{{post.id}}/">UPVOTE</a>
+    <a href="/dislike/{{post.id}}/">DOWNVOTE</a>
+    <p>{{post.likes}}</p>
+    <p>{{post.created_at}} </p>
+</div>
+<hr>
+{% endfor %}

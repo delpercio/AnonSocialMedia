@@ -1,3 +1,5 @@
 from django.contrib import admin
+from ghost_app.models import Posts
 
-# Register your models here.
+# Migrated Data Models
+admin.site.register(Posts)

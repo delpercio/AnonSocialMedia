@@ -23,9 +23,10 @@ urlpatterns = [
     path('roasts/', views.roasts_view),
     path('submit/', views.submit_view),
     path('sorted/', views.sorted_view),
-    path('',views.index_view)
+    path('like/<int:post_id>/', views.likes_view),
+    path('dislike/<int:post_id>/', views.dislikes_view),
+    path('',views.index_view),
 ]
 # TODO
 # NEED TO LINK ALL URLS TO PAGES
-# NEED TO ADD BUTTONS TO GO TO BOASTS OR ROASTS
 # NEED TO HAVE A VIEW THAT WILL SORT BY SCORE (UP - DOWN VOTES)

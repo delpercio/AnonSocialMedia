@@ -1,6 +1,12 @@
-<h1>form will go here for submit b or r </h1>
-<form>
-    <input>
-    <button> WHAT ARE YOU </button>
+<h1>xxGHOST_POSTxx</h1>
+<a href="/">home</a>
+<a href="/submit"> submit</a>
+<a href="/sorted"> top score</a>
+<a href="/roasts"> roasts</a>
+<a href="/boasts"> boasts</a>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit">
 </form>
-<a href="/"> GO HOME</a>
+

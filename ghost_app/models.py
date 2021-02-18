@@ -1,5 +1,15 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
-# TODO MODEL FOR POSTS THEY WILL BE THE SAME< USE THE SAME MODEL FOR BOTH BOASTS AND ROASTS
-# DONT FORGET TO REGISTER IN ADMIN AND THEN MIGRATE
+
+POST_CHOICES = ((True, 'Boast'), (False, 'Roast'))
+
+class Posts(models.Model):
+    text = models.CharField(max_length=500)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
+    post_type = models.BooleanField(choices=POST_CHOICES, default= True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.text
